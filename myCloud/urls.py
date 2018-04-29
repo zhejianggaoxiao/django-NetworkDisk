@@ -13,7 +13,7 @@ __author__ = 'gaox'
 
 
 from django.urls import path, include
-from .views import IndexView, SaveFileView, DeleteFileView
+from .views import IndexView, SaveFileView, DeleteFileView, SignupView
 # 注册实现
 import django.contrib.auth.views as authview
 
@@ -26,6 +26,8 @@ urlpatterns = [
 
     path('login/', authview.login, name="login"),
     path('logout/', authview.logout, name="logout"),
+    path('signup/',SignupView.as_view(), name="signup" ),
+
 
 
 ]
